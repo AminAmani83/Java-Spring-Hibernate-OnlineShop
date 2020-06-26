@@ -1,0 +1,7 @@
+		<div id="logo"><a href="./">My Online Shop - User ID: ${userId}</a></div>
+		<nav>
+			<ul>
+				<li><a href="./cart?userid=${userId}"> Cart </a></li>
+				<li><a href="./shop?userid=${userId}"> Shop </a></li>
+			</ul>
+		</nav>

@@ -1,0 +1,90 @@
+/* Header */
+header {
+	background-color: #333;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+}
+
+#logo {
+	float: left;
+	color: white;
+	margin: 14px;
+	font-weight: bold;
+}
+
+#logo a {
+	color: white!important;
+	text-decoration: none!important;
+}
+
+
+/* Navigation */
+nav {
+	float: right;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	display: inline-block;
+}
+
+nav li {
+	float: right;
+	border-left: 1px solid #bbb;
+}
+
+nav li:last-child {
+	border-left: none;
+}
+
+nav li a, nav li a:visited  {
+	display: block;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	color: white!important;
+	text-decoration: none!important;
+}
+
+nav li a:hover {
+	background-color: #111;
+	color: white!important;
+	text-decoration: none!important;
+}
+
+nav .active {
+	background-color: #4CAF50;
+}
+
+
+/* Main */
+main {
+	padding: 30px;
+}
+
+h1, h2 {
+	margin-bottom: 2rem!important;
+}
+
+/* Forms */
+.clear-float {
+	clear: both;
+}
+
+#editform, #add-item {
+	display: none;
+}
+
+#add-item {
+	border: 1px solid black;
+	padding: 10px;
+	margin-top: 10px;
+}
+
+[id^="row"] input {
+	max-width: 100%;
+}

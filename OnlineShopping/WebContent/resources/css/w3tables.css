@@ -1,0 +1,13 @@
+/* W3.CSS 4.13 June 2019 by Jan Egil and Borge Refsnes */
+
+.w3-bordered tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.w3-striped tbody tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+.w3-hoverable tbody tr:hover {
+    background-color: #ccc;
+}

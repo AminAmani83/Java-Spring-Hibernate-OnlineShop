@@ -1,0 +1,7 @@
+		<div id="logo"><a href="../">My Online Shop - Admin Panel</a></div>
+		<nav>
+			<ul>
+				<li><a href="./users"> Manage Users </a></li>
+				<li><a href="./products"> Manage Products </a></li>
+			</ul>
+		</nav>
