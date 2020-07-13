@@ -63,9 +63,16 @@ public class UserDaoImpl implements UserDao {
 	public boolean updateUser(User user) {
 		// This user Obj has everything except cartItem and Addresses sets
 		User oldUser = this.getUserById(user.getId());
-		user.setAddresses(oldUser.getAddresses());
-		user.setCartItems(oldUser.getCartItems()); // not necessary
-		getSession().update(user);
+		// We can't save "user" directly, we must copy it onto "oldUser" and save oldUser.
+		oldUser.setUsername(user.getUsername());
+		oldUser.setPassword(user.getPassword());
+		oldUser.setFirstName(user.getFirstName());
+		oldUser.setMiddleName(user.getMiddleName());
+		oldUser.setLastName(user.getLastName());
+		oldUser.setGender(user.getGender());
+		oldUser.setPhone(user.getPhone());
+		
+		getSession().update(oldUser);
 		return true;
 	}
 
