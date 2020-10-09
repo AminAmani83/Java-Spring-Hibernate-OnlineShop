@@ -3,8 +3,8 @@
 ############# Creating Tables #############
 
 DROP TABLE IF EXISTS
-    user;
-CREATE TABLE IF NOT EXISTS user(
+    `user`;
+CREATE TABLE IF NOT EXISTS `user`(
     id INT NOT NULL AUTO_INCREMENT,
     username VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(100) NOT NULL,
@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS user(
     PRIMARY KEY(id)
 ); 
 DESCRIBE
-    user;
+    `user`;
 
 DROP TABLE IF EXISTS
     address;
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS user_address(
 	user_id INT NOT NULL,
 	address_id INT NOT NULL,
     PRIMARY KEY(id),
-	FOREIGN KEY(user_id) REFERENCES user(id) ON DELETE CASCADE,
+	FOREIGN KEY(user_id) REFERENCES `user`(id) ON DELETE CASCADE,
 	FOREIGN KEY(address_id) REFERENCES address(id) ON DELETE CASCADE
 );
 DESCRIBE
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS cart(
     user_id INT,
     product_id INT,
     quantity INT NOT NULL,
-    FOREIGN KEY(user_id) REFERENCES user(id) ON DELETE CASCADE,
+    FOREIGN KEY(user_id) REFERENCES `user`(id) ON DELETE CASCADE,
     FOREIGN KEY(product_id) REFERENCES product(id) ON DELETE CASCADE,
     PRIMARY KEY(id)
 );
@@ -84,9 +84,9 @@ DESCRIBE
 
 SET FOREIGN_KEY_CHECKS = 0; 
 
-TRUNCATE table user;
-#DELETE FROM user;
-INSERT INTO user
+#TRUNCATE table `user`;
+#DELETE FROM `user`;
+INSERT INTO `user`
 (id, username, password, email, first_name, middle_name, last_name, gender, phone)
 VALUES
 (1, 'amin_01', 'amin_01', 'amin_01@myahoo.com', 'Amin1', 'A', 'Amani1', 'M', 15551101001),
@@ -95,7 +95,7 @@ VALUES
 (4, 'amin_04', 'amin_04', 'amin_04@myahoo.com', 'Amin4', 'D', 'Amani4', 'M', 15554401004),
 (5, 'amin_05', 'amin_05', 'amin_05@myahoo.com', 'Amin5', 'E', 'Amani5', 'M', 15555501005);
 
-TRUNCATE table address;
+#TRUNCATE table address;
 #DELETE FROM address;
 INSERT INTO address
 (id, address_type, address_line_1, address_line_2, city, province, country, postal_code)
@@ -111,7 +111,7 @@ VALUES
 (9, 'billing', '9090 Sherbrook Ave', '', 'Montreal', 'QC', 'CA', 'B9B 9H9'),
 (10, 'shipping', '1010 Sherbrook Ave', '', 'Montreal', 'QC', 'CA', 'B1B 1H1');
 
-TRUNCATE table user_address;
+#TRUNCATE table user_address;
 #DELETE FROM user_address;
 INSERT INTO user_address
 (id, user_id, address_id)
@@ -130,7 +130,7 @@ VALUES
 (12, 5, 10);
 
 
-TRUNCATE table product;
+#TRUNCATE table product;
 #DELETE FROM product;
 INSERT INTO product
 (id, name, description, image, unit_price)
@@ -147,7 +147,7 @@ VALUES
 (10, 'Samsung S10 Edge', 'Another flagship cellphone from 2019', 'http://www.aminamani.net/assets/demo/java/img/phone.jpg', '750.00'),
 (11, 'Samsung S20', 'Flagship cellphone from 2020', 'http://www.aminamani.net/assets/demo/java/img/phone.jpg', '800.00');
 
-TRUNCATE table cart;
+#TRUNCATE table cart;
 #DELETE FROM cart;
 INSERT INTO cart
 (id, user_id, product_id, quantity)
